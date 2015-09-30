@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="UI">
+      <UniqueIdentifier>{073563c8-53d1-4168-b6cc-b184131c5a7a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Application">
+      <UniqueIdentifier>{0755accb-4e6c-4dd5-b447-21c4f0731c0f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Application\Win32Wrappers">
+      <UniqueIdentifier>{1a88b8bb-de97-453e-9229-29fc4e4523d1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Engine.h" />
+    <ClInclude Include="MessageHandler.h">
+      <Filter>Application</Filter>
+    </ClInclude>
+    <ClInclude Include="Application.h">
+      <Filter>Application</Filter>
+    </ClInclude>
+    <ClInclude Include="Window.h">
+      <Filter>Application</Filter>
+    </ClInclude>
+    <ClInclude Include="Win32Application.h">
+      <Filter>Application\Win32Wrappers</Filter>
+    </ClInclude>
+    <ClInclude Include="Win32Window.h">
+      <Filter>Application\Win32Wrappers</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Engine.cpp" />
+    <ClCompile Include="Application.cpp">
+      <Filter>Application</Filter>
+    </ClCompile>
+    <ClCompile Include="Window.cpp">
+      <Filter>Application</Filter>
+    </ClCompile>
+    <ClCompile Include="Win32Application.cpp">
+      <Filter>Application\Win32Wrappers</Filter>
+    </ClCompile>
+    <ClCompile Include="Win32Window.cpp">
+      <Filter>Application\Win32Wrappers</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
