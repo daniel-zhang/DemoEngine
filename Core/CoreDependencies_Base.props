@@ -3,16 +3,17 @@
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
-    <_PropertySheetDisplayName>DummyDemo_Base</_PropertySheetDisplayName>
+    <_PropertySheetDisplayName>Core_Base</_PropertySheetDisplayName>
   </PropertyGroup>
   <ItemDefinitionGroup>
-    <Link>
-      <AdditionalDependencies>Core.lib;Engine.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-    </Link>
     <ClCompile>
       <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
+    <ProjectReference />
+    <Lib />
+    <Lib>
+      <AdditionalDependencies>d3dcompiler.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemGroup />
 </Project>

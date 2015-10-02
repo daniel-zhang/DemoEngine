@@ -2,13 +2,14 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup>
-    <_PropertySheetDisplayName>Engine_Base</_PropertySheetDisplayName>
-  </PropertyGroup>
+  <PropertyGroup />
   <ItemDefinitionGroup>
     <Lib>
-      <AdditionalDependencies>dwmapi.lib;SetupAPI.lib</AdditionalDependencies>
+      <AdditionalDependencies>libboost_serialization-vc120-mt-gd-1_59.lib</AdditionalDependencies>
     </Lib>
+    <Link>
+      <AdditionalDependencies>libboost_serialization-vc120-mt-gd-1_59.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
   </ItemDefinitionGroup>
   <ItemGroup />
 </Project>

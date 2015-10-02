@@ -47,8 +47,8 @@ void hash_combine(std::size_t& seed, const T& v)
     (void)(!!(_expression) || (_wassert(_CRT_WIDE(#_expression L"\nMessage: " _msg), _CRT_WIDE(__FILE__), __LINE__), 0))
 #endif
 #else
-#ifndef check
-#define check(_expression, _msg) (void(_expression))
+#ifndef vcheck
+#define vcheck(_expression, _msg) (void(_expression))
 #endif
 #endif
 

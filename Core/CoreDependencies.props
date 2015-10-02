@@ -3,12 +3,13 @@
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
-    <_PropertySheetDisplayName>Engine_Base</_PropertySheetDisplayName>
+    <_PropertySheetDisplayName>Core_Debug</_PropertySheetDisplayName>
   </PropertyGroup>
   <ItemDefinitionGroup>
-    <Lib>
-      <AdditionalDependencies>dwmapi.lib;SetupAPI.lib</AdditionalDependencies>
-    </Lib>
+    <ClCompile />
+    <Lib />
+    <Lib />
+    <ProjectReference />
   </ItemDefinitionGroup>
   <ItemGroup />
 </Project>

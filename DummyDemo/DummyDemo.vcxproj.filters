@@ -8,6 +8,9 @@
     <ClCompile Include="Test_App.cpp">
       <Filter>EngineTest</Filter>
     </ClCompile>
+    <ClCompile Include="dummy.cpp">
+      <Filter>SerializationTest</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MinimalMsgHandler.h">
@@ -22,6 +25,9 @@
     <ClInclude Include="Test_Util.h">
       <Filter>CoreTest</Filter>
     </ClInclude>
+    <ClInclude Include="dummy.h">
+      <Filter>SerializationTest</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="EngineTest">
@@ -29,6 +35,9 @@
     </Filter>
     <Filter Include="CoreTest">
       <UniqueIdentifier>{5f74a349-76e7-487f-8414-288aadbe3bfb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SerializationTest">
+      <UniqueIdentifier>{98b94a5d-b22f-4f40-91d9-80f446da38aa}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

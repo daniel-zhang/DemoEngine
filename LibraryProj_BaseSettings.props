@@ -3,17 +3,21 @@
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
+    <_PropertySheetDisplayName>Global_Base</_PropertySheetDisplayName>
   </PropertyGroup>
   <ItemDefinitionGroup>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(SolutionDir)/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)/ThirdParty/boost/include/;$(SolutionDir)/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>$(SolutionDir)$(Configuration)\</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)/ThirdParty/boost/lib/;$(SolutionDir)$(Configuration)\</AdditionalLibraryDirectories>
     </Link>
     <Lib>
-      <AdditionalLibraryDirectories>$(OutDir)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)/ThirdParty/boost/lib/;$(OutDir)</AdditionalLibraryDirectories>
     </Lib>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup />
 </Project>

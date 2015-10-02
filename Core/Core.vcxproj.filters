@@ -34,6 +34,12 @@
     <ClInclude Include="Palette.h">
       <Filter>Math</Filter>
     </ClInclude>
+    <ClInclude Include="Serialization.h">
+      <Filter>Serialization</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderCompiler.h">
+      <Filter>ShaderFramework</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Utility">
@@ -42,10 +48,22 @@
     <Filter Include="Math">
       <UniqueIdentifier>{f973904e-2779-4106-af0a-3c5b9096e3b3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Serialization">
+      <UniqueIdentifier>{6d5d39ea-ff09-454d-88f7-2892933f74ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ShaderFramework">
+      <UniqueIdentifier>{a2757592-0295-4911-8820-ef4f420c51c5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Util.cpp">
       <Filter>Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="Serialization.cpp">
+      <Filter>Serialization</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderCompiler.cpp">
+      <Filter>ShaderFramework</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

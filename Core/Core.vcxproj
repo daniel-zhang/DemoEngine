@@ -34,10 +34,16 @@
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
     <Import Project="..\LibraryProj_BaseSettings.props" />
+    <Import Project="..\Global_Debug.props" />
+    <Import Project="CoreDependencies_Base.props" />
+    <Import Project="CoreDependencies.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
     <Import Project="..\LibraryProj_BaseSettings.props" />
+    <Import Project="..\Global_Release.props" />
+    <Import Project="CoreDependencies_Base.props" />
+    <Import Project="CoreDependencies_Release.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup />
@@ -50,6 +56,9 @@
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
+    </ProjectReference>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -58,12 +67,14 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>BOOST_SERIALIZATION_NO_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
+    <ProjectReference />
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Color.h" />
@@ -73,12 +84,16 @@
     <ClInclude Include="Quaternion.h" />
     <ClInclude Include="Matrix.h" />
     <ClInclude Include="MiscMath.h" />
+    <ClInclude Include="Serialization.h" />
+    <ClInclude Include="ShaderCompiler.h" />
     <ClInclude Include="Util.h" />
     <ClInclude Include="Vector2D.h" />
     <ClInclude Include="Vector3D.h" />
     <ClInclude Include="Vector4D.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ShaderCompiler.cpp" />
+    <ClCompile Include="Serialization.cpp" />
     <ClCompile Include="Util.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
