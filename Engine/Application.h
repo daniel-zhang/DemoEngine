@@ -1,18 +1,17 @@
 #pragma once
 #include "MessageHandler.h"
 #include "Window.h"
-
-class Win32Application;
+#include "Win32Application.h"
 
 class Application : public MessageHandler
 {
 public:
-    static void initialize()
+    static Application* getInstance()
     {
-        if (mApp == nullptr) mApp = new Application();
-    }
+        static Application instance;
 
-    static Application* getInstance(){ return mApp; }
+        return &instance; 
+    }
 
     ~Application();
 
@@ -37,22 +36,28 @@ public:
     /************************************************************************/
     void addWindow(Window* window, bool showImmediately = true);
 
-    void run();
+    template<typename Lambda>
+    void run(Lambda& delegate)
+    {
+        while (!mExit)
+        {
+            // Only tick when thread msg queue is empty
+            if (mNativeApp->pumpMsg() == false)
+            {
+                delegate();
+            }
+        }
+    }
 
     void closeWindow(Window* window);
 
 private:
-
-    void tick();
 
     void destroy();
 
     Window* findWindow(const Win32Window* nativeWindow) const;
 
 private:
-    // Make singleton
-    static Application* mApp;
-
     Application();
     Application(const Application&);
     Application& operator=(const Application&);

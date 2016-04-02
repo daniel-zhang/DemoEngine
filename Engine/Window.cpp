@@ -27,7 +27,7 @@ Window* Window::buildBorderlessWindow()
 
     window->mTitle = L"Borderless Window";
     window->mOpacity = 1.f;
-    window->mCornerRadius = 10;
+    window->mCornerRadius = 3;
 
     return window;
 }

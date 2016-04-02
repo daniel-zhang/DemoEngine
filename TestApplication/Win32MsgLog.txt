@@ -1,0 +1,4 @@
+> 06:25:58.000 INFO Close button is clicked on window: Default Window
+> 06:26:37.000 INFO Close button is clicked on window: Default Window
+> 06:26:47.250 INFO Close button is clicked on window: Default Window
+> 06:27:29.000 INFO Close button is clicked on window: Default Window

@@ -4,12 +4,6 @@
     <ClInclude Include="Util.h">
       <Filter>Utility</Filter>
     </ClInclude>
-    <ClInclude Include="CommonTypes.h">
-      <Filter>Utility</Filter>
-    </ClInclude>
-    <ClInclude Include="MiscMath.h">
-      <Filter>Math</Filter>
-    </ClInclude>
     <ClInclude Include="Vector2D.h">
       <Filter>Math</Filter>
     </ClInclude>
@@ -31,14 +25,44 @@
     <ClInclude Include="Math.h">
       <Filter>Math</Filter>
     </ClInclude>
+    <ClInclude Include="Compiler.h">
+      <Filter>ShaderLoader</Filter>
+    </ClInclude>
+    <ClInclude Include="CommonHeaders.h">
+      <Filter>Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Log.h">
+      <Filter>Utility\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderLoader.h">
+      <Filter>ShaderLoader</Filter>
+    </ClInclude>
     <ClInclude Include="Palette.h">
       <Filter>Math</Filter>
     </ClInclude>
-    <ClInclude Include="Serialization.h">
-      <Filter>Serialization</Filter>
+    <ClInclude Include="ShaderStage.h">
+      <Filter>ShaderLoader</Filter>
     </ClInclude>
-    <ClInclude Include="ShaderCompiler.h">
-      <Filter>ShaderFramework</Filter>
+    <ClInclude Include="StringFunction.h">
+      <Filter>Utility\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="HashHelper.h">
+      <Filter>Utility\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="MurmurHash3.h">
+      <Filter>Utility\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="FileOp.h">
+      <Filter>Utility\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="TickTimer.h">
+      <Filter>Utility\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="FbxLoader.h">
+      <Filter>FbxImporter</Filter>
+    </ClInclude>
+    <ClInclude Include="FbxHelper.h">
+      <Filter>FbxImporter</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -48,22 +72,40 @@
     <Filter Include="Math">
       <UniqueIdentifier>{f973904e-2779-4106-af0a-3c5b9096e3b3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Serialization">
-      <UniqueIdentifier>{6d5d39ea-ff09-454d-88f7-2892933f74ba}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ShaderFramework">
+    <Filter Include="ShaderLoader">
       <UniqueIdentifier>{a2757592-0295-4911-8820-ef4f420c51c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FbxImporter">
+      <UniqueIdentifier>{96e4ad31-61e2-4532-8c09-6fe5ef3bed4d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utility\Misc">
+      <UniqueIdentifier>{b543bda3-8af9-47b6-ad5a-60dfc121e921}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Util.cpp">
-      <Filter>Utility</Filter>
+    <ClCompile Include="Compiler.cpp">
+      <Filter>ShaderLoader</Filter>
     </ClCompile>
-    <ClCompile Include="Serialization.cpp">
-      <Filter>Serialization</Filter>
+    <ClCompile Include="Log.cpp">
+      <Filter>Utility\Misc</Filter>
     </ClCompile>
-    <ClCompile Include="ShaderCompiler.cpp">
-      <Filter>ShaderFramework</Filter>
+    <ClCompile Include="ShaderLoader.cpp">
+      <Filter>ShaderLoader</Filter>
+    </ClCompile>
+    <ClCompile Include="StringFunction.cpp">
+      <Filter>Utility\Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="MurmurHash3.cpp">
+      <Filter>Utility\Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="FileOp.cpp">
+      <Filter>Utility\Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="FbxLoader.cpp">
+      <Filter>FbxImporter</Filter>
+    </ClCompile>
+    <ClCompile Include="FbxHelper.cpp">
+      <Filter>FbxImporter</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

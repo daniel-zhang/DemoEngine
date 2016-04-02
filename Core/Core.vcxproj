@@ -35,15 +35,11 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
     <Import Project="..\LibraryProj_BaseSettings.props" />
     <Import Project="..\Global_Debug.props" />
-    <Import Project="CoreDependencies_Base.props" />
-    <Import Project="CoreDependencies.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
     <Import Project="..\LibraryProj_BaseSettings.props" />
     <Import Project="..\Global_Release.props" />
-    <Import Project="CoreDependencies_Base.props" />
-    <Import Project="CoreDependencies_Release.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup />
@@ -52,12 +48,20 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
+      <BrowseInformation>true</BrowseInformation>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <ProjectReference />
+    <Lib>
+      <AdditionalDependencies>d3dcompiler.lib;dxguid.lib;libfbxsdk-md.lib;libboost_serialization-vc120-mt-gd-1_59.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
+    <Bscmake>
+      <PreserveSbr>true</PreserveSbr>
+    </Bscmake>
     <ProjectReference>
-      <LinkLibraryDependencies>true</LinkLibraryDependencies>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -75,26 +79,45 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
     <ProjectReference />
+    <Lib>
+      <AdditionalDependencies>d3dcompiler.lib;dxguid.lib;libfbxsdk-md.lib;libboost_serialization-vc120-mt-1_59.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Color.h" />
-    <ClInclude Include="CommonTypes.h" />
+    <ClInclude Include="CommonHeaders.h" />
+    <ClInclude Include="Compiler.h" />
+    <ClInclude Include="FbxHelper.h" />
+    <ClInclude Include="FbxLoader.h" />
+    <ClInclude Include="FileOp.h" />
+    <ClInclude Include="HashHelper.h" />
+    <ClInclude Include="Log.h" />
+    <ClInclude Include="MurmurHash3.h" />
     <ClInclude Include="Palette.h" />
     <ClInclude Include="Math.h" />
     <ClInclude Include="Quaternion.h" />
     <ClInclude Include="Matrix.h" />
-    <ClInclude Include="MiscMath.h" />
-    <ClInclude Include="Serialization.h" />
-    <ClInclude Include="ShaderCompiler.h" />
+    <ClInclude Include="ShaderLoader.h" />
+    <ClInclude Include="ShaderStage.h" />
+    <ClInclude Include="StringFunction.h" />
+    <ClInclude Include="TickTimer.h" />
     <ClInclude Include="Util.h" />
     <ClInclude Include="Vector2D.h" />
     <ClInclude Include="Vector3D.h" />
     <ClInclude Include="Vector4D.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ShaderCompiler.cpp" />
-    <ClCompile Include="Serialization.cpp" />
-    <ClCompile Include="Util.cpp" />
+    <ClCompile Include="Compiler.cpp" />
+    <ClCompile Include="FbxHelper.cpp" />
+    <ClCompile Include="FbxLoader.cpp" />
+    <ClCompile Include="FileOp.cpp" />
+    <ClCompile Include="Log.cpp" />
+    <ClCompile Include="MurmurHash3.cpp" />
+    <ClCompile Include="ShaderLoader.cpp" />
+    <ClCompile Include="StringFunction.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

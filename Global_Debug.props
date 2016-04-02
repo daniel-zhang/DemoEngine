@@ -5,10 +5,13 @@
   <PropertyGroup />
   <ItemDefinitionGroup>
     <Lib>
-      <AdditionalDependencies>libboost_serialization-vc120-mt-gd-1_59.lib</AdditionalDependencies>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)/$(Configuration)/;$(SolutionDir)/ThirdParty/boost/lib/;$(SolutionDir)/ThirdParty/fbx_sdk_Jan_2015/lib/vs2013/x86/debug;$(SolutionDir)/ThirdParty/freetype-2.5.5/objs/vc2013/Win32;$(SolutionDir)/ThirdParty/DirectXTex/lib/vs2013/win32/debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
     <Link>
-      <AdditionalDependencies>libboost_serialization-vc120-mt-gd-1_59.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)/ThirdParty/DirectXTex/lib/vs2013/win32/debug;$(SolutionDir)/$(Configuration)/;$(SolutionDir)/ThirdParty/boost/lib/;$(SolutionDir)/ThirdParty/fbx_sdk_Jan_2015/lib/vs2013/x86/debug;$(SolutionDir)/ThirdParty/freetype-2.5.5/objs/vc2013/Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup />

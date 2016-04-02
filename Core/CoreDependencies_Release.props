@@ -9,6 +9,9 @@
     <ProjectReference />
     <Lib />
     <ClCompile />
+    <Lib>
+      <AdditionalDependencies>libfbxsdk-md.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemGroup />
 </Project>

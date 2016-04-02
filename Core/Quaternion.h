@@ -1,9 +1,8 @@
 #pragma once
 
 #include <DirectXMath.h>
-using namespace DirectX;
 
-class Quaternion : public XMFLOAT4
+class Quaternion : public DirectX::XMFLOAT4
 {
 public:
 
@@ -13,7 +12,7 @@ public:
 
 inline void Quaternion::slerp(const Quaternion& q0, const Quaternion& q1, float t, Quaternion& outQ)
 {
-    XMVECTOR Q0 = XMLoadFloat4(&q0);
-    XMVECTOR Q1 = XMLoadFloat4(&q1);
-    XMStoreFloat4(&outQ, XMQuaternionSlerp(Q0, Q1, t));
+    DirectX::XMVECTOR Q0 = DirectX::XMLoadFloat4(&q0);
+    DirectX::XMVECTOR Q1 = DirectX::XMLoadFloat4(&q1);
+    DirectX::XMStoreFloat4(&outQ, DirectX::XMQuaternionSlerp(Q0, Q1, t));
 }

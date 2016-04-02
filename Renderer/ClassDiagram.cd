@@ -1,0 +1,464 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access" MembersFormat="FullSignature">
+  <Class Name="TestRenderer" Collapsed="true">
+    <Position X="34.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEEsEAAAQUAAAAAAAUBACAQjAQMAAQIAACAABAACAg=</HashCode>
+      <FileName>TestRenderer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TestDraw2D" Collapsed="true">
+    <Position X="41.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgEEgAAAAAQABABAAAUBAAEAjAAMAARIAAAAAAAAAAo=</HashCode>
+      <FileName>TestDraw2D.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GuiDrawTest" Collapsed="true">
+    <Position X="36.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAEAAAAAAAAMAAAAABAAAAAAAAI=</HashCode>
+      <FileName>TestGuiDraw.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Image" Collapsed="true">
+    <Position X="38.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAgQAADAIABAAAEQAAiAIgAACAQhIEgAAAAEQEAAY=</HashCode>
+      <FileName>image.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Image2D" Collapsed="true">
+    <Position X="40" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAgAAAAAAAAhAAAEAECCAIgAQAAQgAAAAAQAAAEAAI=</HashCode>
+      <FileName>Image2D.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Material" Collapsed="true">
+    <Position X="0.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEEAAAAAAAAEQAAAAAAAAEAAAAEAAAAAAABAAAAAAIA=</HashCode>
+      <FileName>Material.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PhongMaterial" Collapsed="true">
+    <Position X="0.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAEAAAAAAAAIAAABAAAAAAAA=</HashCode>
+      <FileName>Material.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Mesh" Collapsed="true">
+    <Position X="41.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAQAEAEAAAEAAAAAAAAAAAAAAYAwAAAAAAAAg=</HashCode>
+      <FileName>Mesh.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Renderer" Collapsed="true">
+    <Position X="34.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAiAAgAAAAAIAAAAAUAIEABDAACCAQAAICgAAAgAAA=</HashCode>
+      <FileName>Renderer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VisualElementGroups" Collapsed="true">
+    <Position X="36.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAIAAAAABCCAAAAAAAgAAA=</HashCode>
+      <FileName>visualelementgroups.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FreetypeInterface" Collapsed="true">
+    <Position X="40" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAEAAEAAAAAAAQAAAAAIAAAAAAA=</HashCode>
+      <FileName>FontLibrary.cpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FontLibrary" Collapsed="true">
+    <Position X="38.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACEAAAAAAAAAAAIAKAEAAEAAAACAAIRAgAAgEAEEAIA=</HashCode>
+      <FileName>fontlibrary.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GuiBatcher" Collapsed="true">
+    <Position X="41.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAQAAAAAAEAEAAAAAAAiAAAAABIAIBAEABAA=</HashCode>
+      <FileName>GuiBatcher.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GuiDrawInterface" Collapsed="true">
+    <Position X="34.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAICAAAAAAAdAJECABAAAAAAIAAAiACAAICg=</HashCode>
+      <FileName>guidrawinterface.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextureAtlas" Collapsed="true">
+    <Position X="38.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAACAAAAAAQAAAgAAAQAEERAAAAACAAAMAAAABAAAA=</HashCode>
+      <FileName>TextureAtlas.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ConstBuffer" Collapsed="true">
+    <Position X="2" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAIAAgAAAIAAAAAAAAAAYMBAJAAAAAIAAARACAAEAgA=</HashCode>
+      <FileName>ConstBuffer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IRenderResource" Collapsed="true">
+    <Position X="17" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAEgAIAAAAAIAAABAAAAAAAA=</HashCode>
+      <FileName>RenderResource.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RenderStates" Collapsed="true">
+    <Position X="11" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAIAGTAEAAAAIEACJAAAAAYAAEBAEgCAAAA=</HashCode>
+      <FileName>RenderStates.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RenderTarget" Collapsed="true">
+    <Position X="13.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AkAAAABAAJAABAAAIAAQIEAALAAAAEIAAQBIAACAAAI=</HashCode>
+      <FileName>RenderTarget.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Sampler" Collapsed="true">
+    <Position X="15.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAIAAAgAAAAAAYEAAJAgAAAIQAABAAAAAAAA=</HashCode>
+      <FileName>Sampler.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Texture">
+    <Position X="43.75" Y="2" Width="4" />
+    <NestedTypes>
+      <Enum Name="Texture::EUsage" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Texture.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Enum Name="Texture::EDimension" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Texture.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>QBAkpEEhHBIA9hhQAABIKEACBCABUBAMAAoIQBCoAgI=</HashCode>
+      <FileName>Texture.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VertexBuffer">
+    <Position X="31.25" Y="3.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>ABABAIAAEIAAAACAAAAAYEAAJAAAAAoAAQBAAAAAEAA=</HashCode>
+      <FileName>VertexBuffer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="IndexBuffer" Collapsed="true">
+    <Position X="4.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAEIAAAACAAAAAcEABJAAAAAoAAQBAAAAAAAA=</HashCode>
+      <FileName>VertexBuffer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VertexDeclaration" Collapsed="true">
+    <Position X="7.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABIAAAAIEAQAABAAAAIEgABEAAAAIBAAAAEAAAAAA=</HashCode>
+      <FileName>VertexDeclaration.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BaseVertexDecl" Collapsed="true">
+    <Position X="6.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAAAAAAAAAAAIgAAAAQAAABgAAAAAAA=</HashCode>
+      <FileName>VertexDeclaration.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GuiVertexDecl" Collapsed="true">
+    <Position X="8.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAAAAAAAAAAAIAAAAAYAAABgAAAAAAA=</HashCode>
+      <FileName>VertexDeclaration.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Viewport" Collapsed="true">
+    <Position X="17.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAIAEAAAAAAABQEAAJAAAAAIAAABAAAAAAAA=</HashCode>
+      <FileName>Viewport.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BasePixelShader" Collapsed="true">
+    <Position X="24.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAIAIAAAAAAAggAAAAAQAAA=</HashCode>
+      <FileName>BasePixelShader.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BaseVertexShader" Collapsed="true">
+    <Position X="26.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAIAIAAAAAAAABABAAAQEAA=</HashCode>
+      <FileName>BaseVertexShader.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GuiDefaultVS" Collapsed="true">
+    <Position X="29" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAIAIAAAAAAAABAAAAAQAAA=</HashCode>
+      <FileName>guishaders.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GuiDefaultPS" Collapsed="true">
+    <Position X="20" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAIAIAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>guishaders.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GuiFontPS" Collapsed="true">
+    <Position X="22.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAIIIAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>guishaders.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShaderLibrary" Collapsed="true">
+    <Position X="40" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAAAAAAAAAEAAAAAQAAAAgAAAAYAA=</HashCode>
+      <FileName>ShaderLibrary.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UniqueID" Collapsed="true">
+    <Position X="34.75" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAQAAQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Shader.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Shader" Collapsed="true">
+    <Position X="24.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAABAAAAAAAAAA=</HashCode>
+      <FileName>Shader.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="VertexShader" Collapsed="true">
+    <Position X="27.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQEAkAAIAIAAAAAAAEAAIkMABAAAABIQABBAAAAQAAA=</HashCode>
+      <FileName>Shader.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PixelShader" Collapsed="true">
+    <Position X="22.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQEAEAAIAIAAAAAAAAAAIlMABAgAAAIAAABAAAAQAAA=</HashCode>
+      <FileName>Shader.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CbufferParameter" Collapsed="true">
+    <Position X="34.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAACAAAAAQAAABQAAAAAAAAAAICAAAAAEA=</HashCode>
+      <FileName>ShaderParameter.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SamplerParameter">
+    <Position X="36.5" Y="4" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAoAAAAAAAAQAAAAAABAAAAAAAAACAAAAAEA=</HashCode>
+      <FileName>ShaderParameter.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextureParameter" Collapsed="true">
+    <Position X="40" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAoAAAABAAAQAAAAAAAAACAAAAAACAAAAAEA=</HashCode>
+      <FileName>ShaderParameter.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CbufferParameterGroup" Collapsed="true">
+    <Position X="36.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACIAAAAAAAAUAAABAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ShaderParameter.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SamplerParameterGroup" Collapsed="true">
+    <Position X="38.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACIAAAAAAAAUAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ShaderParameter.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextureParameterGroup" Collapsed="true">
+    <Position X="41.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACIAAAAAAAAUAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ShaderParameter.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="MaterialMeshGroup" Collapsed="true">
+    <Position X="40" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gEAAAAAEABIAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mesh.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="RendererSettings" Collapsed="true">
+    <Position X="34.75" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAEAAABAAAAAAAAAAEAAAAAABAAAAAQQ=</HashCode>
+      <FileName>Renderer.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="VisualElement" Collapsed="true">
+    <Position X="38.25" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ggAADAAAAAAAAAAAAAAAAggAAAAAAAAAAABAiAAABAA=</HashCode>
+      <FileName>visualelementgroups.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="VisualElementGroup" Collapsed="true">
+    <Position X="40" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>visualelementgroups.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="FontDescription" Collapsed="true">
+    <Position X="34.75" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>fontlibrary.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="FontDescHash" Collapsed="true">
+    <Position X="41.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>fontlibrary.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="FontDescEqual" Collapsed="true">
+    <Position X="40" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>fontlibrary.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="CharacterMetrics" Collapsed="true">
+    <Position X="38.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAhAAAAAAIAAAAAEAAAAEgADAQAAAAACABCAA=</HashCode>
+      <FileName>fontlibrary.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="GuiRenderBatch" Collapsed="true">
+    <Position X="36.5" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gEAAAAAAAAIAAAAAEAAAAAACAAAAgAAAAAIQACAAAAE=</HashCode>
+      <FileName>GuiBatcher.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="RenderBatchList" Collapsed="true">
+    <Position X="41.75" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAABAAAAAAAACAAAAAAAAAACAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GuiBatcher.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="AtlasRect" Collapsed="true">
+    <Position X="34.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAgAAAgAAAAAEAAAAAAAAAAAAAAAAAAYAA=</HashCode>
+      <FileName>TextureAtlas.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="RenderTargetSpec" Collapsed="true">
+    <Position X="36.5" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAEAoAAQkAAAAAAABAAACAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>RenderTarget.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="BaseVertex" Collapsed="true">
+    <Position X="36.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAAAAAAACAAAIAAACAAAAgAAAAAA=</HashCode>
+      <FileName>VertexDeclaration.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="GuiVertex" Collapsed="true">
+    <Position X="38.25" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAAAAAAAAAQAAAAAAAIAAgAAAAAA=</HashCode>
+      <FileName>VertexDeclaration.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Enum Name="EGuiShaderType" Collapsed="true">
+    <Position X="41.75" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAiAAAAAAAAAAAAAAACAAAAAEA=</HashCode>
+      <FileName>GuiBatcher.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="EGuiDrawFlag" Collapsed="true">
+    <Position X="38.25" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAAAIAAAAAAAAAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>GuiBatcher.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="EGuiDrawEffect" Collapsed="true">
+    <Position X="36.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAAIAAAAAgAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GuiBatcher.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="EGuiPrimitiveTopology" Collapsed="true">
+    <Position X="40" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GuiBatcher.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="ECbufferSemantics" Collapsed="true">
+    <Position X="34.75" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAAAAAABIAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>ShaderParameter.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="ESamplerSemantics" Collapsed="true">
+    <Position X="34.75" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAQAAAAAAAAAAAABAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>ShaderParameter.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="ETexture2DSemantics" Collapsed="true">
+    <Position X="36.5" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAEAAAAAAAAAAAABAAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>ShaderParameter.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>

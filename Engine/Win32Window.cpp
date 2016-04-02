@@ -65,10 +65,10 @@ void Win32Window::initialize(Win32Application* owningApp, const Win32WindowDefin
     mOwningApp = owningApp;
     mDefinition = winDef;
 
-    int32_t x            = Math::trunc(mDefinition.DesiredPosX);
-    int32_t y            = Math::trunc(mDefinition.DesiredPosY);
-    int32_t clientWidth  = Math::trunc(mDefinition.DesiredWidth);
-    int32_t clientHeight = Math::trunc(mDefinition.DesiredHeight);
+    int32_t x            = (int32_t)std::trunc(mDefinition.DesiredPosX);
+    int32_t y            = (int32_t)std::trunc(mDefinition.DesiredPosY);
+    int32_t clientWidth  = (int32_t)std::trunc(mDefinition.DesiredWidth);
+    int32_t clientHeight = (int32_t)std::trunc(mDefinition.DesiredHeight);
     int32_t windowWidth  = clientWidth;
     int32_t windowHeight = clientHeight;
 
@@ -190,7 +190,7 @@ void Win32Window::reshape(int32_t newX, int32_t newY, int32_t newWidth, int32_t 
 
 void Win32Window::setOpacity(float opacity)
 {
-    ::SetLayeredWindowAttributes(mHwnd, 0, Math::trunc(opacity * 255.0f), LWA_ALPHA);
+    ::SetLayeredWindowAttributes(mHwnd, 0, (uint8_t)Math::trunc(opacity * 255.0f), LWA_ALPHA);
 }
 
 void Win32Window::setWindowRegion(int32_t width, int32_t height)

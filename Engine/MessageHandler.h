@@ -1,5 +1,5 @@
 #pragma once
-#include "Core/CommonTypes.h"
+#include "Core/Util.h"
 #include "Win32Window.h"
 
 enum EMouseButtons

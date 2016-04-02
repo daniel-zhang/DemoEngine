@@ -1,0 +1,172 @@
+# 渲染器-shader子系统
+
+## 1. 编译和加载
+这里的讨论基于`d3dcompiler.lib`。编译和加载是独立于渲染器的（目前放在core模块），考虑到未来可能需要异步加载。
+
+输入
+- shader target (vs/hs/ds/ps/gs/cs)
+- compile flags
+- 预处理 includes/macros
+    - ue4使用第三方预处理库
+    - 暂时没有必要，先凑合用默认的includer -- D3D_COMPILE_STANDARD_FILE_INCLUDE
+- shader源文件路径
+- shader代码entry point
+
+输出
+- bytecode
+- reflection数据，即shader parameter map
+    - 具体在“参数”条目下阐述
+- 统计数据(指令数目，绑定资源数目等）
+- 源文件hash
+
+
+错误处理
+- 目前省略
+
+加载
+- 每次编译的输入输出均进行序列化，存储在csc(compiler shader cache)文件中
+- 加载shader时首先检查csc文件是否与源文件匹配，只有在csc文件outdated时才重新编译
+    - 目前仅仅比较源代码hash
+    - 还应该比较编译输入数据，如compiler flags，includes, macros等
+- 否则直接加载csc文件
+    - 这是为了支持运行时shader编译
+    - 同时避免每次运行都要编译
+
+## 2. 参数
+
+### 2.1 处理反射数据
+
+d3d反射使用下列结构来描述所有的shader输入
+```cpp
+typedef struct _D3D11_SHADER_INPUT_BIND_DESC
+{
+    LPCSTR                      Name;           // Name of the resource
+    D3D_SHADER_INPUT_TYPE       Type;           // Type of resource (e.g. texture, cbuffer, etc.)
+    UINT                        BindPoint;      // Starting bind point
+    UINT                        BindCount;      // Number of contiguous bind points (for arrays)
+   
+    UINT                        uFlags;         // Input binding flags
+    D3D_RESOURCE_RETURN_TYPE    ReturnType;     // Return type (if texture)
+    D3D_SRV_DIMENSION           Dimension;      // Dimension (if texture)
+    UINT                        NumSamples;     // Number of samples (0 if not MS texture)
+} D3D11_SHADER_INPUT_BIND_DESC;
+```
+
+其中shader input type结构如下
+```cpp
+        D3D_SIT_CBUFFER    = 0,
+        D3D_SIT_TBUFFER    = ( D3D_SIT_CBUFFER + 1 ) ,
+        D3D_SIT_TEXTURE    = ( D3D_SIT_TBUFFER + 1 ) ,
+        D3D_SIT_SAMPLER    = ( D3D_SIT_TEXTURE + 1 ) ,
+        D3D_SIT_UAV_RWTYPED= ( D3D_SIT_SAMPLER + 1 ) ,
+        D3D_SIT_STRUCTURED = ( D3D_SIT_UAV_RWTYPED + 1 ) ,
+        D3D_SIT_UAV_RWSTRUCTURED  = ( D3D_SIT_STRUCTURED + 1 ) ,
+        D3D_SIT_BYTEADDRESS= ( D3D_SIT_UAV_RWSTRUCTURED + 1 ) ,
+        D3D_SIT_UAV_RWBYTEADDRESS = ( D3D_SIT_BYTEADDRESS + 1 ) ,
+        D3D_SIT_UAV_APPEND_STRUCTURED    = ( D3D_SIT_UAV_RWBYTEADDRESS + 1 ) ,
+        D3D_SIT_UAV_CONSUME_STRUCTURED   = ( D3D_SIT_UAV_APPEND_STRUCTURED + 1 ) ,
+        D3D_SIT_UAV_RWSTRUCTURED_WITH_COUNTER   = ( D3D_SIT_UAV_CONSUME_STRUCTURED + 1 ) ,
+```
+
+在d3d反射的数据组织中，cbuffer/tbuffer, texture和sampler是平级的参数，即它们的bindpoint处于同一个连续域中。但从应用的角度，cbuffer/tbuffer相当于容器，我们需要的是它含有的参数。因此将cbuffer的内容与texture/sampler放在一起，描述他们的数据结构为shader parameter map。
+
+这个parameter map 以参数名为索引，描述各个参数的布局。
+其中texture/sampler仅需要描述bindpoint和bindcount，而位于cbuffer/tbuffer中的参数需要描述buffer bind point, offset into the buffer, 和var size。
+
+这使得一个shader所需要引用的全部参数均能由一个数据结构统一描述。
+
+### 2.2参数引用
+要将一个渲染资源赋给shader参数，需要两个信息
+- 参数绑定数据
+- 参数所引用的渲染资源
+
+
+ShaderParameter即负责这两个信息，根据类型不同，有CbufferParameter, TextureParameter, SamplerParameter。
+
+#### 问题-如何使不同的shader有相同的apply行为？
+
+设计1
+
+```cpp
+IShader{
+    virtual void setWorldMatrix();
+    virtual void setViewMatrix();
+    virtual void setProjMatrix();
+    virtual void setLight();
+
+    virtual void setDefaultTexture();
+    virtual void setFontTexture();
+    virtual void setDiffuseTexture();
+    virtual void setNormalMap();
+
+    virtual void setDefaultSampler();
+    virtual void setFontSampler();
+    void apply();
+}
+```
+
+基类包含了shader所有需要设置的参数。对于一个concrete子类shader来说，它按自身需要实现对应的方法，而并不需要实现全部方法。但即使如此，当shader数目增加时，为每个shader实现一遍上述接口？想想就够了。
+
+设计2
+
+```cpp
+enum Semantics {
+    WorldMatrix,
+    ViewMatrix,
+    ProjMatrix,
+
+    DefaultTexture,
+    FontTexture,
+    ...
+}
+IShader{
+    void setParam(semantics, val);
+    void apply();
+}
+```
+
+实现这种设计的关键在于维护一个稀疏的参数数组。当shader创建时，它将根据semantics创建参数数组，并根据parameter map中的绑定数据来初始化参数数组。这将创建一个有着很多洞的数组，只有在param map给出的位置才存在有效的参数。
+
+当调用setParam()时，它使用传入的semantics检索参数数组，只有目标参数有效时才去设置。也就是说，这是一个适应于所有可能shader的类，前提是semantics涵盖了所有可能的参数。当然，添加新的semantics也非常简单。
+
+此外参数数组直接以semantics为索引，因此检索过程非常廉价。
+
+> 备注：
+
+> 建立参数数组时，会使用翻译表将param map中的参数字符串与semantics关联起来。目前这种关联/翻译过程对所有shader来说是统一的，这使得所有shader编写时必须遵循统一的参数变量命名（如世界变换阵必须叫做gWorld，类似于我们自定义的关键字)。这实际上比effect那种直接绑定字符串名字的做法好的多--允许不同的shader使用不同的名字称呼同一个参数，只会带来不必要的麻烦。当然如果必要，可以考虑加入override机制，使得concrete shader可以定义自己的‘参数名-semantics’关联。
+
+
+#### 问题-shader parameter所引用的渲染资源的ownership归属？
+
+shader只拥有cbuffer资源。因为设置cbuffer变量实际是个值拷贝过程--先拷贝到cache中，再commit。
+
+## 3 Shader Permutation
+
+### 3.1 几种处理permutation explosion的实践 
+
+**Specific shaders** 
+
+简单粗暴，适用复杂度不高的场合。目前采用这种方法。
+
+**Uber Shader** 
+
+Uber Shader没有清晰定义，大体分成这些流派
+
+* switch/if流派
+* 宏定义流派 (unreal)
+* 宏定义+自定义preprocessing流派 (unity)
+
+Uber Shader在大体逻辑上保持不变，在细节(feature)上可以替换。一个Uber Shader所包含的全部features及每个feature的值域是编译期确定的。在编译时，每一种feature combination都生成一个feature key和一组编译宏，后者用于编译产生对应的permutaion shader。最终得到map<feature_key, shader_permutation>。
+
+在运行/渲染时，根据渲染对象的类型，渲染代码将选择一个uber shader对象，然后为它的各个feature赋值。这些值是由渲染对象/material/用户在运行时决定的。在调用draw call之前，uber shader将根据当前的feature combination生成feature key,再利用key选择特定的shader permutation绑定到管线。
+
+**Dynamic Shader Linkage**
+
+DSL是d3d方言，在gl对应的东西貌似叫shader subroutine?
+
+思路跟Uber Shader异曲同工。实现上通过“运行时渲染代码链接”把维护permutation table的部分任务下放到graphics api/driver level。比起uber shader，编译耗时应该减少许多，当然运行时效率并没有差别。
+
+显著优点是渲染代码维护feature table的任务会变简单。不再需要维护显式的 feature key->shader permutation map，每个shader feature直接对应interface instance，每个feature的值域则对应一组class instances。根据渲染对象的类型/material属性，渲染代码可以直接生成一组class instances作为shader输入参数。
+
+计划采用dsl。比如用dsl重写几个ue4 shader，应该是不错的。
+

@@ -1,10 +1,5 @@
 #include "Application.h"
 
-#include "Win32Application.h"
-#include "Window.h"
-
-Application* Application::mApp = nullptr;
-
 Application::Application() : 
 mExit(false),
 mIsActivated(false)
@@ -72,33 +67,12 @@ void Application::addWindow(Window* window, bool showImmediately)
     }
 }
 
-void Application::run()
-{
-    while (!mExit)
-    {
-        // Only tick when thread msg queue is empty
-        if (mNativeApp->pumpMsg() == false)
-        {
-            tick();
-        }
-    }
-}
-
-void Application::tick()
-{
-
-}
-
 void Application::destroy()
 {
     // Clean up anything
 
     // Terminate run loop on next tick
     mExit = true;
-    
-    // Not very necessary for a singleton
-    delete mApp;
-    mApp = nullptr;
 }
 
 Window* Application::findWindow(const Win32Window* nativeWindow) const

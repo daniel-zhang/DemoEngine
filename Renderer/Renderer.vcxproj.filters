@@ -1,9 +1,180 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClInclude Include="Renderer.h" />
+    <ClInclude Include="Material.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="Mesh.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderResource.h">
+      <Filter>Private\D3DRenderResource</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderStates.h">
+      <Filter>Private\D3DRenderResource</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderTarget.h">
+      <Filter>Private\D3DRenderResource</Filter>
+    </ClInclude>
+    <ClInclude Include="Sampler.h">
+      <Filter>Private\D3DRenderResource</Filter>
+    </ClInclude>
+    <ClInclude Include="VertexDeclaration.h">
+      <Filter>Private\D3DRenderResource</Filter>
+    </ClInclude>
+    <ClInclude Include="Viewport.h">
+      <Filter>Private\D3DRenderResource</Filter>
+    </ClInclude>
+    <ClInclude Include="ConstBuffer.h">
+      <Filter>Private\D3DRenderResource</Filter>
+    </ClInclude>
+    <ClInclude Include="GuiBatcher.h">
+      <Filter>Private\GuiDrawInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="GuiDrawInterface.h">
+      <Filter>Private\GuiDrawInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="VisualElementGroups.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="GuiShaders.h">
+      <Filter>Private\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderLibrary.h">
+      <Filter>Private\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader.h">
+      <Filter>Private\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="FontLibrary.h">
+      <Filter>Private\GuiDrawInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureAtlas.h">
+      <Filter>Private\GuiDrawInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="Image2D.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="RendererCommon.h">
+      <Filter>Private</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderParameter.h">
+      <Filter>Private\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="Image.h">
+      <Filter>Public</Filter>
+    </ClInclude>
+    <ClInclude Include="DxgiFormatUtil.h">
+      <Filter>Private</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>Private\D3DRenderResource</Filter>
+    </ClInclude>
+    <ClInclude Include="GeometryBuffer.h">
+      <Filter>Private\D3DRenderResource</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseShaders.h">
+      <Filter>Private\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="Prototype_ShaderTemplate.h">
+      <Filter>Private\Shader</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Renderer.cpp" />
+    <ClCompile Include="Material.cpp">
+      <Filter>Public</Filter>
+    </ClCompile>
+    <ClCompile Include="Mesh.cpp">
+      <Filter>Public</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderStates.cpp">
+      <Filter>Private\D3DRenderResource</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderTarget.cpp">
+      <Filter>Private\D3DRenderResource</Filter>
+    </ClCompile>
+    <ClCompile Include="Sampler.cpp">
+      <Filter>Private\D3DRenderResource</Filter>
+    </ClCompile>
+    <ClCompile Include="VertexDeclaration.cpp">
+      <Filter>Private\D3DRenderResource</Filter>
+    </ClCompile>
+    <ClCompile Include="Viewport.cpp">
+      <Filter>Private\D3DRenderResource</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstBuffer.cpp">
+      <Filter>Private\D3DRenderResource</Filter>
+    </ClCompile>
+    <ClCompile Include="GuiDrawInterface.cpp">
+      <Filter>Private\GuiDrawInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderer.cpp">
+      <Filter>Public</Filter>
+    </ClCompile>
+    <ClCompile Include="GuiBatcher.cpp">
+      <Filter>Private\GuiDrawInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="GuiShaders.cpp">
+      <Filter>Private\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderLibrary.cpp">
+      <Filter>Private\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader.cpp">
+      <Filter>Private\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="FontLibrary.cpp">
+      <Filter>Private\GuiDrawInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureAtlas.cpp">
+      <Filter>Private\GuiDrawInterface</Filter>
+    </ClCompile>
+    <ClCompile Include="Image2D.cpp">
+      <Filter>Public</Filter>
+    </ClCompile>
+    <ClCompile Include="ShaderParameter.cpp">
+      <Filter>Private\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="Image.cpp">
+      <Filter>Public</Filter>
+    </ClCompile>
+    <ClCompile Include="DxgiFormatUtil.cpp">
+      <Filter>Private</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>Private\D3DRenderResource</Filter>
+    </ClCompile>
+    <ClCompile Include="GeometryBuffer.cpp">
+      <Filter>Private\D3DRenderResource</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseShaders.cpp">
+      <Filter>Private\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="Prototype_ShaderTemplate.cpp">
+      <Filter>Private\Shader</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Public">
+      <UniqueIdentifier>{5995a74c-8417-4751-8b60-26a37b775b90}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Private">
+      <UniqueIdentifier>{be7047e7-34ad-4bfb-8936-33cf5f320ace}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Private\GuiDrawInterface">
+      <UniqueIdentifier>{7fb79f68-555b-4433-a4e5-3202832cae38}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Private\D3DRenderResource">
+      <UniqueIdentifier>{0e2bc0c3-5e0f-4b63-916d-30efb46c78ce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Private\Shader">
+      <UniqueIdentifier>{ccfbeb8c-b277-41f0-85c8-8a7514b822e2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
 </Project>
